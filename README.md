@@ -1,5 +1,14 @@
 # DemoFront
 
+Pasos para desplegar por CLI
+
+1. npm i http-server -g (con sudo si es necesario)
+2. ng build
+3. Paso 2 genera el directorio dist/demo-front, entrar en ese directorio
+4. http-server -p 8081
+5. Abrir browser en http://localhost:8081
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
 
 ## Development server
