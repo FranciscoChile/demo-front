@@ -1,0 +1,44 @@
+
+<div class="container mt-5 mb-3">
+
+  <button type="button" class="btn btn-primary mb-3" [routerLink]="['add/']">
+    <i class="bi bi-plus-circle" ></i> Agregar             
+  </button>
+  
+
+  <div class="row">
+      <div *ngFor="let c of taskList" >
+          <div class="card mb-2">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                  <div class="d-flex flex-row align-items-center">                      
+                      <div class="ms-2 c-details">
+                          <h6 class="mb-0">{{c.id}}</h6> 
+                      </div>
+                  </div>
+              </div>
+              <div class="mt-2 d-flex justify-content-between">
+                  <h4 class="heading">Descripción: {{c.description}}</h4>
+                  <h4 class="heading">Fecha creación: {{c.creationDate}}</h4>
+                  <h4 class="heading">Vigente: 
+                    <i *ngIf="c.valid" class="bi bi-hand-thumbs-up"></i>
+                    <i *ngIf="!c.valid" class="bi bi-hand-thumbs-down"></i>
+                  </h4>                  
+              </div>
+
+              <button type="button" class="btn btn-primary me-1" (click)="delete(c.id)">
+                <i class="bi bi-trash" ></i> Borrar             
+              </button>            
+              
+              <button type="button" class="btn btn-primary" [routerLink]="['edit/', c.id]">
+                <i class="bi bi-pencil" ></i> Editar             
+              </button>
+  
+            </div>
+
+          </div>
+      </div>
+
+
+  </div>
+</div>

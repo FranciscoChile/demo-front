@@ -1,0 +1,41 @@
+<div class="container mt-4">
+    <h4 class="title">Editar Tarea</h4>
+
+    <div class="row">
+
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+
+                    <form [formGroup]="mainform" (ngSubmit)="save(mainform)"  >
+                        <div class="mb-3 ">
+                            <label for="descriptionInput" class="form-label">Descripción</label>
+                            <input type="text" id="descriptionInput" formControlName="description" class="form-control" >
+                            <div class="error-message" *ngIf="mainform.get('description')?.invalid && (mainform.get('description')?.dirty || mainform.get('description')?.touched)">
+                                <div *ngIf="mainform.get('description')?.errors?.['required']">
+                                    Ingresar una descripción válida
+                                </div>            
+                            </div>
+                        </div>
+                        <div class="mb-3 ">
+                            {{mainform.value.creationDate}}
+                        </div>
+                        <div class="mb-3 ">
+                            <div class="form-check form-switch">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Válido</label>
+                                <input class="form-check-input" formControlName="valid" type="checkbox" role="switch" id="flexSwitchCheckDefault">                                
+                              </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary me-1" [disabled]="mainform.invalid">Guardar</button>
+                        <button type="button" class="btn btn-primary" (click)="cancel()" >Volver</button>
+                    </form>            
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
