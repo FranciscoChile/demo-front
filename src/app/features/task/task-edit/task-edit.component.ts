@@ -10,6 +10,8 @@ import { TaskService } from 'src/app/core/services/task.service';
 })
 export class TaskEditComponent implements OnInit {
   
+  errorMessage = '';
+  
   constructor(    
     private fb: FormBuilder,
     private router: Router,
@@ -44,7 +46,8 @@ export class TaskEditComponent implements OnInit {
 
     },
     error: (e) => {
-      throw new Error('Error cargando información');
+      console.log('Error');
+      this.errorMessage = 'Error desconocido';
     }
   });
 }
@@ -68,7 +71,8 @@ export class TaskEditComponent implements OnInit {
         this.cancel();
       },
       error: (e) => {
-        throw new Error('Error on update item');
+        console.log('Error');
+        this.errorMessage = 'Error desconocido';
       }
     });
   }

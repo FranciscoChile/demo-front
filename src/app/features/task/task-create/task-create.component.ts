@@ -10,6 +10,8 @@ import { TaskService } from 'src/app/core/services/task.service';
 })
 export class TaskCreateComponent implements OnInit {
 
+  errorMessage = '';
+
   constructor(    
     private fb: FormBuilder,
     private router: Router,
@@ -45,7 +47,8 @@ export class TaskCreateComponent implements OnInit {
         this.cancel();
       },
       error: (e) => {
-        throw new Error('Error on add item');
+        console.log('Error');
+        this.errorMessage = 'Error desconocido';
       }
     });
 

@@ -21,7 +21,7 @@ export class TaskListComponent implements OnInit {
         this.taskList = (data as any).data;
       },
       error: (e) => {
-        throw new Error('Get data error');
+        console.log('Error');        
       },
       complete: () => {
         console.log('Completed!');
