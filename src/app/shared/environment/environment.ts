@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   //apiUrl: 'http://localhost:8080/api'
-  apiUrl: 'https://fran-service-m4fis7lm2q-tl.a.run.app'
+  apiUrl: 'https://fran-service-m4fis7lm2q-tl.a.run.app/api'
 };
 
 /*
